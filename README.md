@@ -1,8 +1,13 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+it uses the github api to fetch the total list of repositories, with client side pagination to render 13 repositories per page.
+A single repositorty can also be viewed by clicking on each of the repository card.
+Also, it has an errorboundary to catch errors in the children components and a 404 page.
+It was hosted using vercel.
+
+##link to deployed application
+open [https://my-github-portfolio-mu.vercel.app/] to view the deployed version in your browser.
+
 
 In the project directory, you can run:
 
