@@ -1,21 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const RepositoryCard = () => {
+export const RepositoryCard = (props) => {
+  const { repo } = props;
   return (
-    <div className="bg-white border-y-primary border-y-2 rounded-sm border-solid h-auto w-10/12 mx-auto py-6  px-6 flex flex-col items-start my-8">
-      <div>
-        <a href="" className="text-xl font-semibold text-tertiary">
-          linktree-page
-        </a>
-        <button className="text-secondary border border-primary text-xs rounded-2xl p-1 ml-2">
-          public
-        </button>
+    <Link to={`repo/${repo.name}`}>
+      <div className="bg-white border border-primary  rounded-lg border-solid p-6 my-8 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110">
+        <div className="flex items-center">
+          <h2 className="text-xl font-semibold text-tertiary hover:underline hover:decoration-tertiary hover:decoration-solid">
+            {repo.name}
+          </h2>
+          <button className="text-secondary border border-primary text-xs rounded-2xl p-1 ml-2">
+            {repo.visibility}
+          </button>
+        </div>
+        <p className="text-secondary text-base mt-2">
+          {"Description"}: {repo.description}
+        </p>
+        <p className="text-secondary text-sm mt-2">
+          {"Language Used"}: {repo.language}
+        </p>
+        <p className="text-secondary text-sm mt-2">
+          {"Updated on"}: {repo.updated_at}
+        </p>
       </div>
-      <p className="text-secondary text-base mt-2">hng9's first task submission using react and tailwind css</p>
-      <div className="flex mt-2">
-      <p className="text-secondary text-sm">language used</p>
-      <p className="text-secondary text-sm ml-6">updated 21 hours ago</p>
-      </div>
-    </div>
+    </Link>
   );
 };
